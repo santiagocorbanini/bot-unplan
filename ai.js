@@ -46,10 +46,12 @@ Respondé SOLO con un JSON (sin markdown, sin explicaciones) con este formato ex
 Si no es una solicitud de servicio, ponés "category": null.`;
 
   const response = await groq.chat.completions.create({
-    model: 'llama-3.1-8b-instant', // gratuito en Groq
+    //model: 'llama-3.1-8b-instant', // gratuito en Groq
+    model: 'openai/gpt-oss-20b',
     messages: [{ role: 'user', content: prompt }],
     temperature: 0.1,
     max_tokens: 200,
+    response_format: { type: 'json_object' },
   });
 
   const content = response.choices[0].message.content.trim();
