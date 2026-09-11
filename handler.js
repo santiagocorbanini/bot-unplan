@@ -152,8 +152,9 @@ function buildResponse(originalText, classification, shows) {
 
   toShow.forEach((show, i) => {
     msg += `${i + 1}. *${show.title}*\n`;
-    if (show.venue) msg += `   📍 Lugar: ${show.venue}\n`;
+    if (show.venue) msg += `   📍 Lugar: ${show.venue},${show.address}\n`;
     if (show.event_date) msg += `   📅 Fecha: ${new Date(show.event_date).toLocaleDateString('es-ES')}\n`;
+    if (show.category) msg += `   📍 Lugar: ${show.category}\n`;
     if (show.url) msg += `   🔗 Reservar: ${show.url}\n`;
     msg += `   🖼️ Flyer: ${show.image_url}\n\n`;
   });
