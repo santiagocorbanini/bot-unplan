@@ -6,26 +6,11 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 // Categorías que matchean con tu base de datos
 const CATEGORIES_CONTEXT = `
 Categorías disponibles en la plataforma:
-- electricista / electricidad
-- plomero / plomería / termotanque / cañería / agua
-- pintor / pintura
-- albañil / construcción / remodelación
-- carpintero / carpintería / muebles
-- cerrajero / cerradura / puerta
-- gasista / gas / calefacción
-- aire acondicionado / refrigeración / técnico
-- limpieza / doméstico
-- jardinero / jardinería
-- mudanzas / flete
-- informática / computación / técnico pc
-- profesor / clases particulares / tutor
-- contador / contabilidad
-- abogado / legal
-- psicólogo / psicología
-- médico / salud
-- diseño / gráfico / web
-- fotografía / fotógrafo
-- mecánico / auto / vehiculo
+- música
+- teatro
+- comedia
+- recital
+- evento
 `;
 
 export async function classifyMessage(text) {

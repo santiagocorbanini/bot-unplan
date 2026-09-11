@@ -87,7 +87,7 @@ export async function handleIncomingMessage({ message, from, phoneNumberId }) {
     // Tipo de mensaje no soportado
     await sendWhatsAppMessage(
       phoneNumberId, from,
-      '👋 ¡Hola! Contame tu problema por texto o mandame un audio y te busco el experto ideal 🔧'
+      '👋 ¡Hola! Contame que evento o comercio queres buscar'
     );
     return;
   }
@@ -107,7 +107,7 @@ export async function handleIncomingMessage({ message, from, phoneNumberId }) {
   if (!classification.category) {
     await sendWhatsAppMessage(
       phoneNumberId, from,
-      '🤔 No entendí bien qué tipo de servicio necesitás. ¿Podés darme más detalles? Por ejemplo: "se me rompió el termotanque" o "necesito pintar el living".'
+      '🤔 No entendí bien qué tipo de categoría buscas. ¿Podés darme más detalles? Por ejemplo: "que restaurnates hay abiertos" o "necesito que me digas heladerías".'
     );
     return;
   }
